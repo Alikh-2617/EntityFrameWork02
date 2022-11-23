@@ -1,0 +1,51 @@
+﻿@model CityVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cities</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New City</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Citys Name
+            </th>
+            <th>
+                Post Number 
+            </th>
+            <th>
+                Register Date
+            </th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var city in Model.Cities) {
+        <tr>
+                <td>
+                    @city.Name
+                </td>
+            <td>
+                @city.PostNumber
+            </td>
+            <td>
+                @city.Register
+            </td>
+
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@city.Id">Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@city.Id">Details</a> |
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@city.Id">Peoples Living In This City </a> |
+
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@city.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
