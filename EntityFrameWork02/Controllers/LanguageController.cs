@@ -50,13 +50,13 @@ namespace EntityFrameWork02.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Language language)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                _context.Language.Update(language);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
             }
-            _context.Language.Update(language);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            return NotFound();
         }
 
 
@@ -89,7 +89,6 @@ namespace EntityFrameWork02.Controllers
             }
             return NotFound();
         }
-
 
 
     }

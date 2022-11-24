@@ -24,6 +24,7 @@ namespace EntityFrameWork02.Controllers
             return View(city.People);  
         }
 
+
         public IActionResult AddPeopleToTheCity()
         {
             // en selec list skickas      den tabel skickas oxh "Id" rad ska skickas till baka "Name" rad ska visas där i view

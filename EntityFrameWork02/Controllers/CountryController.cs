@@ -51,13 +51,14 @@ namespace EntityFrameWork02.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Country country)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                country.Register = DateTime.Now;
+                _context.Country.Update(country);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
             }
-            _context.Country.Update(country);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            return NotFound();
         }
 
 

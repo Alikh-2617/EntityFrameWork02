@@ -50,5 +50,15 @@ namespace EntityFrameWork02.Controllers
 
             return RedirectToAction("index", new {id = countryid});
         }
+
+        public IActionResult RemoveCityAvCountry(string id, string countryid)
+        {
+            var country = _context.Country.Include(x => x.City).FirstOrDefault(x => x.Id == countryid);
+            var city = _context.City.Find(id);
+            country.City.Remove(city);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", new { id = countryid });
+        }
     }
 }

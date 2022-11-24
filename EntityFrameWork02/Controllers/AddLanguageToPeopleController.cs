@@ -35,6 +35,7 @@ namespace EntityFrameWork02.Controllers
         {
             var person = _context.Person.Include(x=>x.Languages).FirstOrDefault(x=>x.Id == personid);
             var language = _context.Language.Find(languageid);
+
             if(!person.Languages.Any(x=>x.Id == languageid))
             {
                 person.Languages.Add(language);
@@ -48,7 +49,20 @@ namespace EntityFrameWork02.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index" , new {id = personid});
+            return RedirectToAction("Index" , new {id = personid });
         }
+
+        public IActionResult DeleteLanguageAvPerson(string id, string languageid)
+        {
+            var person = _context.Person.Include(x => x.Languages).FirstOrDefault(x => x.Id == id);
+            var language = _context.Language.Find(languageid);
+            person.Languages.Remove(language);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", new { id = id });
+        }
+
+
+
     }
 }

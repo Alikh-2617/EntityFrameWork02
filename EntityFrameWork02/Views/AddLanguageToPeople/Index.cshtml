@@ -16,7 +16,7 @@
                 <tr>
                     <th>@language.Name</th>
                     <th>
-                        <a class="btn btn-danger" asp-action="DeleteLanguageAvPerson" asp-route-id="@language.Id" asp-route-personid="@ViewBag.personId">Delete</a>
+                        <a class="btn btn-danger" asp-action="DeleteLanguageAvPerson" asp-route-languageid="@language.Id" asp-route-id="@ViewBag.personId">Delete</a>
                     </th>
                 </tr>
             }
@@ -25,7 +25,7 @@
 }
 else
 {
-    <h3>Person Nane : @ViewBag.person </h3>
+    <h3>Person Name : @ViewBag.person </h3>
     <h4>There is no language in Database</h4>
 }
 
