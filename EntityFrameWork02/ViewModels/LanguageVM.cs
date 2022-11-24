@@ -6,7 +6,7 @@ namespace EntityFrameWork02.ViewModels
     {
         public Language Language  { get; set; }
 
-        public List<Language> Languagies { get; set; } // = new List<Language>();
+        public List<Language> Languagies { get; set; }  = new List<Language>();
 
         public string GetLanguage { get; set; } = "";
     }

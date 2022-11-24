@@ -6,7 +6,7 @@ namespace EntityFrameWork02.ViewModels
     {
         public Person Person { get; set; } = new Person();
 
-        public List<Person> People { get; set; } // = new List<Person>();
+        public List<Person> People { get; set; } = new List<Person>();
 
         public string GetPerson { get; set; } = "";
     }

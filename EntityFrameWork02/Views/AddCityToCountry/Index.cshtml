@@ -1,0 +1,42 @@
+﻿@model List<City>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Country</h1>
+
+@if (Model.Count() != 0)
+{
+    <h3>@ViewBag.country </h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Citys Name </th>
+                <th>Post Number </th>
+                <th>Register Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var city in Model)
+            {
+                <tr>
+                    <td>@city.Name</td>
+                    <td>@city.PostNumber </td>
+                    <td>@city.Register</td>
+                    <td><a class="btn btn-danger" asp-action="RemoveCityAvCountry" asp-route-id="@city.Id" asp-route-countryid="@ViewBag.Id"> Delete </a></td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>there is not cities in this Country :</h3>
+    <h5>Countrys Name : @ViewBag.country</h5>
+
+}

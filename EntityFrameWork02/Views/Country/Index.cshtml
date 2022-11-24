@@ -33,6 +33,7 @@
             <td>
                 <a class="btn btn-primary" asp-action="Edit" asp-route-id="@country.Id">Edit</a> |
                 <a class="btn btn-info" asp-action="Details" asp-route-id="@country.Id">Details</a> |
+                    <a class="btn btn-info" asp-controller="AddCityToCountry" asp-action="Index" asp-route-id="@country.Id">See Cities in this country</a> |
                 <a class="btn btn-danger" asp-action="Delete" asp-route-id="@country.Id">Delete</a>
             </td>
         </tr>

@@ -6,7 +6,7 @@ namespace EntityFrameWork02.ViewModels
     {
         public City City { get; set; }
 
-        public List<City> Cities { get; set; } // = new List<City>();
+        public List<City> Cities { get; set; }  = new List<City>();
 
         public string GetCity { get; set; } = "";
     }

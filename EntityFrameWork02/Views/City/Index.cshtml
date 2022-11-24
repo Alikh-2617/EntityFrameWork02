@@ -41,8 +41,7 @@
             <td>
                 <a class="btn btn-primary" asp-action="Edit" asp-route-id="@city.Id">Edit</a> |
                     <a class="btn btn-info" asp-action="Details" asp-route-id="@city.Id">Details</a> |
-                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@city.Id">Peoples Living In This City </a> |
-
+                    <a class="btn btn-info" asp-controller="AddPeopleToCity" asp-action="Index" asp-route-id="@city.Id">Peoples Living In This City </a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@city.Id">Delete</a>
             </td>
         </tr>
