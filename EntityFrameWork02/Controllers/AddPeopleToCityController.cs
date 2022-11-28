@@ -31,7 +31,6 @@ namespace EntityFrameWork02.Controllers
             var language = _context.Language.Include(x => x.Person).FirstOrDefault(x => x.Id == id);
             ViewBag.languageId = language.Id;
             ViewBag.Message1 = language.Name;
-            ViewBag.Message2 = language.Id;
             ViewBag.Message3 = $"Speak this Language : {language.Name}";
             return View("Index",language.Person);
         }

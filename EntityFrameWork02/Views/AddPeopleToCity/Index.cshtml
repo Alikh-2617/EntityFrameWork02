@@ -17,6 +17,7 @@
                 <th>Age </th>
                 <th>Phone Number</th>
                 <th>Register Date</th>
+                <th>Cities</th>
                 <th></th>
             </tr>
         </thead>
@@ -29,6 +30,12 @@
                     <td>@person.Age </td>
                     <td>@person.PhoneNumber</td>
                     <td>@person.Register</td>
+                    <th>
+                        @foreach (var d in person.Citys)
+                        {
+                            @d.Name;
+                        }
+                    </th>
                     @if (ViewBag.Id != null)
                     {
                         <td><a class="btn btn-danger" asp-action="RemovePersonAvCity" asp-route-id="@person.Id" asp-route-cityid="@ViewBag.Id"> Delete of city</a></td>
