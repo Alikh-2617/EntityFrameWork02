@@ -37,7 +37,7 @@ namespace EntityFrameWork02.Data
                                                                  // table LangguagePerson vilken är (PersonId , LanguageID)
 
 
-            modelBuilder.Entity<Person>().HasData(new Person { Id=Guid.NewGuid().ToString(), Name="Ali" , Age = 32 , PhoneNumber = "123456", Register = DateTime.Now });
+            //modelBuilder.Entity<Person>().HasData(new Person { Id=Guid.NewGuid().ToString(), Name="Ali" , Age = 32 , PhoneNumber = "123456", Register = DateTime.Now });
             modelBuilder.Entity<Person>().HasData(new Person { Id = Guid.NewGuid().ToString(), Name = "Ali01", Age = 23, PhoneNumber = "123546", Register = DateTime.Now });
             modelBuilder.Entity<Person>().HasData(new Person { Id = Guid.NewGuid().ToString(), Name = "Ali02", Age = 23, PhoneNumber = "123546", Register = DateTime.Now });
             modelBuilder.Entity<Person>().HasData(new Person { Id = Guid.NewGuid().ToString(), Name = "Ali03", Age = 23, PhoneNumber = "123546", Register = DateTime.Now });

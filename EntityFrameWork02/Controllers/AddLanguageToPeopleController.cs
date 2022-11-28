@@ -1,4 +1,5 @@
 ﻿using EntityFrameWork02.Data;
+using EntityFrameWork02.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,8 @@ namespace EntityFrameWork02.Controllers
             ViewBag.personId = person.Id;
             return View(person.Languages);
         }
+
+
 
         public IActionResult AddLanguageToPerson()
         {
